@@ -1,0 +1,42 @@
+li{
+    padding: 3px;
+    list-style: none;
+}
+
+form {
+    display: flex;
+    padding: 3px;
+    justify-content: space-between;
+    width: 50%
+}
+
+#add {
+    background: rgb(0, 180, 0);
+    color: white;
+}
+
+.delete {
+    background:  rgb(255, 35, 35);
+    color: white;
+}
+
+#add:hover {
+    background: rgb(98, 255, 98);
+}
+
+.delete:hover {
+    background: rgb(255, 81, 81);
+}
+
+#note {
+    width: 300px;
+    border-radius: 3px;
+}
+
+header {
+    padding: 10px;
+}
+
+/* html {
+    background-image: linear-gradient(141deg, #9fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
+} */
