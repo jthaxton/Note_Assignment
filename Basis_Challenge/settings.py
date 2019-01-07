@@ -1,5 +1,4 @@
 # import django_heroku
-import dj-database-url
 """
 Django settings for Basis_Challenge project.
 
