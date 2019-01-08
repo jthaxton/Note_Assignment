@@ -33,10 +33,7 @@ def add_note(request):
         return HttpResponseRedirect('/')
     return render(request, 'index.html', {'arr': arr})
 
-
-
 def delete_note(request, pk):
-    context = RequestContext(request, {})
     Note.objects.get(id=pk).delete()
     queryset = Note.objects.all()
     arr = []
