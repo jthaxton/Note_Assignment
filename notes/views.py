@@ -12,7 +12,6 @@ from bs4 import BeautifulSoup
 
 
 def index(request):
-    context = RequestContext(request, {})
     queryset = Note.objects.all()
     arr = []
     for element in queryset:
@@ -20,7 +19,6 @@ def index(request):
     return render(request, 'index.html', {'arr': arr})
 
 def add_note(request):
-    context = RequestContext(request, {})
     queryset = Note.objects.all()
     arr = []
     for element in queryset:
