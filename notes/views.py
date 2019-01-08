@@ -32,7 +32,7 @@ def add_note(request):
         obj = Note(note_text=note, pub_date=date)
         obj.save()
         arr.insert(0,obj)
-        return render(request, 'index.html', {'arr': arr})
+        return HttpResponseRedirect('/')
     return render(request, 'index.html', {'arr': arr})
 
 
@@ -48,5 +48,5 @@ def delete_note(request, pk):
             arr = []
             for element in queryset:
                 arr.insert(0, element)
-            return render(request, 'index.html', {'arr': arr})
+            return HttpResponseRedirect('/')
 
