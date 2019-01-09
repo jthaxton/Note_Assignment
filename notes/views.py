@@ -8,6 +8,7 @@ from django.shortcuts import render_to_response
 from .models import Note
 import datetime
 from bs4 import BeautifulSoup
+from forms import NoteForm
 
 
 
@@ -19,19 +20,14 @@ def index(request):
     return render(request, 'index.html', {'arr': arr})
 
 def add_note(request):
-    queryset = Note.objects.all()
-    arr = []
-    for element in queryset:
-        arr.insert(0, element)
-
-    if request.method == 'POST':
+    if NoteForm(request.POST).is_valid():
         note = BeautifulSoup(request.POST['note']).get_text()
         date = datetime.datetime.now()
         obj = Note(note_text=note, pub_date=date)
         obj.save()
-        arr.insert(0,obj)
         return HttpResponseRedirect('/')
-    return render(request, 'index.html', {'arr': arr})
+    else:
+        return HttpResponseRedirect('/')
 
 def delete_note(request, pk):
     Note.objects.get(id=pk).delete()
@@ -39,9 +35,5 @@ def delete_note(request, pk):
     arr = []
     for element in queryset:
         arr.insert(0, element)
-    if request.method == 'POST':
-            arr = []
-            for element in queryset:
-                arr.insert(0, element)
-            return HttpResponseRedirect('/')
+    return HttpResponseRedirect('/')
 
