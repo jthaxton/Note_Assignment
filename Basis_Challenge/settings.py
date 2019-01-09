@@ -35,7 +35,7 @@ DEBUG = False
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', '[::1]',
                  'whispering-bayou-74902.herokuapp.com', '0.0.0.0']
 
-DEBUG_PROPAGATE_EXCEPTIONS = False
+DEBUG_PROPAGATE_EXCEPTIONS = True
 
 # Application definition
 
