@@ -31,9 +31,5 @@ def add_note(request):
 
 def delete_note(request, pk):
     Note.objects.get(id=pk).delete()
-    queryset = Note.objects.all()
-    arr = []
-    for element in queryset:
-        arr.insert(0, element)
     return HttpResponseRedirect('/')
 
