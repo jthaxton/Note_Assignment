@@ -20,8 +20,12 @@ def index(request):
     return render(request, 'index.html', {'arr': arr})
 
 def add_note(request):
+   
+
     if NoteForm(request.POST).is_valid():
         note = BeautifulSoup(request.POST['note']).get_text()
+        
+
         date = datetime.datetime.now()
         obj = Note(note_text=note, pub_date=date)
         obj.save()
@@ -31,5 +35,6 @@ def add_note(request):
 
 def delete_note(request, pk):
     Note.objects.get(id=pk).delete()
+
     return HttpResponseRedirect('/')
 
