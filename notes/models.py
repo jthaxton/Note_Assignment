@@ -10,9 +10,9 @@ class Note(models.Model):
     def __unicode__(self):
         return self.note_text
 
-class User(models.Model):
-    username = models.CharField(max_length=15)
-    creation_date = models.DateTimeField('date published')
-    note = models.ForeignKey(Note)
-    def __str__(self):
-        return self.username
+# class User(models.Model):
+#     username = models.CharField(max_length=15)
+#     creation_date = models.DateTimeField('date published')
+#     note = models.ForeignKey(Note)
+#     def __str__(self):
+#         return self.username
