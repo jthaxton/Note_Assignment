@@ -19,7 +19,7 @@
         <input type="submit" name="" id="add" value="Submit">
     </form>
     {% for element in arr %}
-    <form method="POST" action={% url 'delete_note' pk=element.id %}>
+    <form method="POST" action={% url 'delete_note' id=element.id %}>
         {% csrf_token %}
         <li> {{ element }} </li>
         <input type="submit" value='Delete' class="delete">

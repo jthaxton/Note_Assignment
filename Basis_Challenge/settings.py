@@ -17,10 +17,6 @@ import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SETTINGS_DIR = os.path.dirname(__file__)
-PROJECT_PATH = os.path.join(SETTINGS_DIR, os.pardir)
-PROJECT_PATH = os.path.abspath(PROJECT_PATH)
-TEMPLATE_PATH = os.path.join(PROJECT_PATH, 'templates')
 
 
 # Quick-start development settings - unsuitable for production
@@ -32,7 +28,7 @@ SECRET_KEY = 'v58rr5rwk0ftsj243a=mga%1%h0iolxtag!husta*+bgg!%f@i'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '[::1]',
+ALLOWED_HOSTS = ['localhost', '127.0.0.1',
                  'whispering-bayou-74902.herokuapp.com', '0.0.0.0']
 
 DEBUG_PROPAGATE_EXCEPTIONS = False
