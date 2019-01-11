@@ -13,8 +13,6 @@
 <body>
     <form method="POST" action={% url 'add_note' %}>
         {% csrf_token %}
-
-
         <input type="text" name="note" id="note" placeholder="Add a note here...">
         <input type="submit" name="" id="add" value="Submit">
     </form>
@@ -25,6 +23,5 @@
         <input type="submit" value='Delete' class="delete">
     </form>
     {% endfor %}
-
 </body>
 </html>
